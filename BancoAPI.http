@@ -1,0 +1,52 @@
+# Variável que guarda o endereço base da nossa API.
+# O nome @BancoAPI_HostAddress é definido por nós, poderia ser qualquer coisa.
+@BancoAPI_HostAddress = http://localhost:5190
+
+###
+#----------------------------------------------------
+# OPERAÇÕES DE CLIENTES (CRUD)
+#----------------------------------------------------
+
+###
+# (READ) - Buscar TODOS os clientes
+# Para executar, clique em "Send Request" que aparece acima desta linha.
+GET {{BancoAPI_HostAddress}}/api/clientes/
+Accept: application/json
+
+###
+# (READ) - Buscar UM cliente pelo seu ID
+# Troque o '1' pelo ID do cliente que você quer buscar.
+GET {{BancoAPI_HostAddress}}/api/clientes/1
+Accept: application/json
+
+###
+# (CREATE) - Criar um novo cliente
+POST {{BancoAPI_HostAddress}}/api/clientes/
+Content-Type: application/json
+
+{
+  "nome": "Lucas Silva",
+  "cpf": "11122233344",
+  "numeroConta": "12345-6",
+  "saldo": 250.50
+}
+
+###
+# (UPDATE) - Atualizar um cliente existente
+# Lembre-se de colocar o ID correto na URL e no corpo do JSON.
+PUT {{BancoAPI_HostAddress}}/api/clientes/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "nome": "Lucas Silva Santos",
+  "cpf": "11122233344",
+  "numeroConta": "12345-6",
+  "saldo": 300.00
+}
+
+
+###
+# (DELETE) - Deletar um cliente pelo seu ID
+DELETE {{BancoAPI_HostAddress}}/api/clientes/1
+Accept: application/json
